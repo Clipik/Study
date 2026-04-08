@@ -75,6 +75,7 @@ a:hover {
 
 .btn-cta-small:hover {
     transition: 0.3s;
+    color: #fff;
     background-color: #e4002e;
 }
 
@@ -92,6 +93,7 @@ a:hover {
 
 .btn-cta:hover {
     transition: 0.3s;
+    color: #fff;
     background-color: #e4002e;
 }
 
@@ -109,6 +111,7 @@ a:hover {
 
 .btn-how:hover {
     transition: 0.3s;
+    color: #5e5e5e;
     background-color: #f0f0f0;
 }
 
@@ -260,6 +263,7 @@ p {
 .btn-card:hover {
     transition: 0.3s;
     background-color: #e4002e;
+    color: #ffffff;
 }
 
 .info {
