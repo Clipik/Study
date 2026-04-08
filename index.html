@@ -13,21 +13,35 @@
         <div class="logo"><a href="https://t.me/gopiton_bot"><img src="images/logo.svg" alt="ainoVPN logo"></a></div>
         <nav>
             <ul class="nav-links">
-                <li><a href="#">Ассортимент</a></li>
-                <li><a href="#">Как пользоваться</a></li>
-                <li><a href="#">Помощь</a></li>
+                <li><a href="#catalog">Ассортимент</a></li>
+                <li><a href="#how">Как пользоваться</a></li>
+                <li><a href="#contacts">Контакты</a></li>
             </ul>
         </nav>
-        <button class="btn-cta-small">Начать</button>
+        <a href="https://t.me/gopiton_bot" class="btn-cta-small">Начать</a></div>
     </header>
     <section class="hero">
-        <h1>Нейросети в России без ВПН и подписок</h1>
-        <p>ChatGPT 5.4 Pro<br>Gemini 3.1 Pro<br>Nano Banana 2 / Pro<br>Kling 2.6 Pro<br>Sora 2<br>Анимация фото в видео
-        </p>
-        <button class="btn-cta">Начать</button>
-        <button class="btn-how">Как пользоваться?</button>
+        <div class="hero-content">
+            <h1>Нейросети в России без ВПН и подписок</h1>
+            <!-- <p>ChatGPT 5.4 Pro<br>Gemini 3.1 Pro<br>Nano Banana 2 / Pro<br>Kling 2.6 Pro<br>Sora 2<br>Анимация фото в видео
+        </p> -->
+            <!-- Пришлось поменять тип написания, чтобы в один ряд их поставить по аналогии с хедером -->
+            <ul class="models-list">
+                <li>ChatGPT 5.4 Pro</li>
+                <li>Gemini 3.1 Pro</li>
+                <li>Nano Banana 2 / Pro</li>
+                <li>Kling 2.6 Pro</li>
+                <li>Sora 2</li>
+                <li>Анимация фото в видео</li>
+            </ul>
+            <div class="hero-btns">
+                <a href="https://t.me/gopiton_bot" class="btn-cta">Начать</a>
+                <a href="#how" class="btn-how">Как пользоваться</a>
+            </div>
+        </div>
+        <div class="hero-img"><img src="images/gpuhero.webp" alt="Видеокарта A2000"></div>
     </section>
-    <section class="catalog">
+    <section class="catalog" id="catalog">
         <h2>Доступные модели</h2>
         <div class="product-grid">
             <article class="product-card">
@@ -45,7 +59,7 @@
                             <dd>от 11₽</dd>
                         </div>
                     </dl>
-                    <button class="btn-card">Попробовать</button>
+                    <a href="https://t.me/gopiton_bot" class="btn-card">Попробовать</a>
                 </div>
             </article>
             <article class="product-card">
@@ -64,7 +78,7 @@
                             <dd>от 35₽</dd>
                         </div>
                     </dl>
-                    <button class="btn-card">Попробовать</button>
+                    <a href="https://t.me/gopiton_bot" class="btn-card">Попробовать</a>
                 </div>
             </article>
             <article class="product-card">
@@ -82,12 +96,12 @@
                             <dd>от 66₽</dd>
                         </div>
                     </dl>
-                    <button class="btn-card">Попробовать</button>
+                    <a href="https://t.me/gopiton_bot" class="btn-card">Попробовать</a>
                 </div>
             </article>
         </div>
     </section>
-    <section class="info">
+    <section class="info" id="how">
         <h2>Как пользоваться</h2>
         <ol>
             <p>Попробуйте лучшие нейросети <b>бесплатно:</b></p>
@@ -98,7 +112,7 @@
         </ol>
         <button>Попробовать</button>
     </section>
-    <footer>
+    <footer id="contacts">
         <p>&copy; GoPiton Projects, 2026<br>ИП Мищенко Никита Дмитриевич</p>
         <ul>
             <li><a href="#">Политика конфиденциальности</a></li>
