@@ -16,6 +16,7 @@
                 <li><a href="#catalog">Модели</a></li>
                 <li><a href="#how">Как пользоваться</a></li>
                 <li><a href="#contacts">Контакты</a></li>
+                <li><a href="#calc">Калькулятор</a></li>
             </ul>
         </nav>
         <div class="left-nav">
@@ -114,65 +115,68 @@
             </article>
         </div>
     </section>
-    <section class="info" id="how">
-        <h2>Как пользоваться</h2>
-        <div class="how-card">
-            <h3>Лучшие нейросети <b>бесплатно</b></h3>
-            <ol>
-                <li>Перейдите в телеграм бота <a href="https://t.me/gopiton_bot" class="link-bot">@gopiton_bot</a></li>
-                <li>Подпишитесь на наш канал и получите 25 нейронов (~3 запроса к ИИ)</li>
-                <li>Приглашайте друзей и получайте по&nbsp;50&nbsp;нейронов за&nbsp;каждого и 10% от их пополнений
-                    <b>рублями
-                        пожизненно</b>
-                </li>
-            </ol>
-            <a href="https://t.me/gopiton_bot" target="_blank" rel="noopener noreferrer"
-                class="btn-card">Попробовать</a>
-        </div>
-    </section>
-    <section class="calc" id="calc">
-        <h2>Калькулятор цены</h2>
-        <p>Расчитайте стоимость запроса к нейросети*</p>
-        <form class="calc-form"><label for="model">Модель</label>
-            <select id="model">
-                <optgroup label="Текст">
-                    <option value="ChatGPT 5.4 Pro">ChatGPT 5.4 Pro</option>
-                    <option value="ChatGPT 5.4">ChatGPT 5.4</option>
-                    <option value="ChatGPT 5.2 Pro">ChatGPT 5.2 Pro</option>
-                    <option value="ChatGPT 5.3 Chat">ChatGPT 5.3 Chat</option>
-                    <option value="Gemini 3.1 Pro">Gemini 3.1 Pro</option>
-                    <option value="Gemini 3 Flash">Gemini 3 Flash</option>
-                </optgroup>
-                <optgroup label="Фото" disabled>
-                    <option value="Nano Banana Pro" disabled>Nano Banana Pro</option>
-                    <option value="Nano Banana 2" disabled>Nano Banana 2</option>
-                </optgroup>
-                <optgroup label="Видео" disabled>
-                    <option value="Kling 2.6 Pro" disabled>Kling 2.6 Pro</option>
-                    <option value="Sora 2" disabled>Sora 2</option>
-                    <option value="Veo 3.1 Fast" disabled>Veo 3.1 Fast</option>
-                    <option value="LTXV 2 Fast" disabled>LTXV 2 Fast</option>
-                </optgroup>
-                <optgroup label="Фото в видео" disabled>
-                    <option value="Kling 2.6 Pro I2V" disabled>Kling 2.6 Pro I2V</option>
-                    <option value="Veo 3.1 Fast I2V" disabled>Veo 3.1 Fast I2V</option>
-                    <option value="Sora 2 I2V" disabled>Sora 2 I2V</option>
-                </optgroup>
-            </select>
-            <label for="input-text">Запрос</label>
-            <textarea type="text" id="input-text" placeholder="Введите тестовый запрос к ИИ..."></textarea>
-            <div class="checkbox-form"><label for="web-search">Включить поиск в интернете</label>
-                <input type="checkbox" id="web-search">
+    <div class="sections-how-calc">
+        <section class="info" id="how">
+            <h2>Как пользоваться</h2>
+            <div class="how-card">
+                <h3>Лучшие нейросети <b>бесплатно</b></h3>
+                <ol>
+                    <li>Перейдите в телеграм бота <a href="https://t.me/gopiton_bot" class="link-bot">@gopiton_bot</a>
+                    </li>
+                    <li>Подпишитесь на наш канал и получите 25 нейронов (~3 запроса к ИИ)</li>
+                    <li>Приглашайте друзей и получайте по&nbsp;50&nbsp;нейронов за&nbsp;каждого и 10% от их пополнений
+                        <b>рублями
+                            пожизненно</b>
+                    </li>
+                </ol>
+                <a href="https://t.me/gopiton_bot" target="_blank" rel="noopener noreferrer"
+                    class="btn-card">Попробовать</a>
             </div>
-            <button type="button" id="calc-btn">Рассчитать цену</button>
-            <!-- пытался понять че шайтан калькулятор не работал, оказалось, он ловил кнопку темы, добавляем айди-->
-            <div class="calc-result">
-                <p class="neuron-res"><output id="result" class="neuron">0</output> нейронов</p>
-                <p class="rub-res">~<span id="rubles" class="rub">0</span>₽</p>
-            </div>
-            <p class="disclaimer">*Средняя стоимость запроса без учёта токенов на рассуждение и медиа</p>
-        </form>
-    </section>
+        </section>
+        <section class="calc" id="calc">
+            <h2>Калькулятор цены*</h2>
+            <form class="calc-form"><label for="model">Модель</label>
+                <select id="model">
+                    <optgroup label="Текст">
+                        <option value="ChatGPT 5.4 Pro">ChatGPT 5.4 Pro</option>
+                        <option value="ChatGPT 5.4">ChatGPT 5.4</option>
+                        <option value="ChatGPT 5.2 Pro">ChatGPT 5.2 Pro</option>
+                        <option value="ChatGPT 5.3 Chat">ChatGPT 5.3 Chat</option>
+                        <option value="Gemini 3.1 Pro">Gemini 3.1 Pro</option>
+                        <option value="Gemini 3 Flash">Gemini 3 Flash</option>
+                    </optgroup>
+                    <optgroup label="Фото" disabled>
+                        <option value="Nano Banana Pro" disabled>Nano Banana Pro</option>
+                        <option value="Nano Banana 2" disabled>Nano Banana 2</option>
+                    </optgroup>
+                    <optgroup label="Видео" disabled>
+                        <option value="Kling 2.6 Pro" disabled>Kling 2.6 Pro</option>
+                        <option value="Sora 2" disabled>Sora 2</option>
+                        <option value="Veo 3.1 Fast" disabled>Veo 3.1 Fast</option>
+                        <option value="LTXV 2 Fast" disabled>LTXV 2 Fast</option>
+                    </optgroup>
+                    <optgroup label="Фото в видео" disabled>
+                        <option value="Kling 2.6 Pro I2V" disabled>Kling 2.6 Pro I2V</option>
+                        <option value="Veo 3.1 Fast I2V" disabled>Veo 3.1 Fast I2V</option>
+                        <option value="Sora 2 I2V" disabled>Sora 2 I2V</option>
+                    </optgroup>
+                </select>
+                <label for="input-text">Запрос</label>
+                <textarea type="text" id="input-text" placeholder="Введите тестовый запрос к ИИ..."></textarea>
+                <div class="checkbox-form"><label for="web-search">Включить поиск в интернете</label>
+                    <input type="checkbox" id="web-search">
+                </div>
+                <p class="disclaimer">*Средняя стоимость запроса без учёта токенов на рассуждение и медиа</p>
+                <div class="calc-btn-calc-result"><button type="button" id="calc-btn">Рассчитать цену</button>
+                    <!-- пытался понять че шайтан калькулятор не работал, оказалось, он ловил кнопку темы, добавляем айди-->
+                    <div class="calc-result">
+                        <p class="neuron-res"><output id="result" class="neuron">0</output> нейронов</p>
+                        <p class="rub-res">~<span id="rubles" class="rub">0</span>₽</p>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </div>
     <footer id="contacts">
         <div class="footer-info">
             <ul>
