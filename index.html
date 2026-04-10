@@ -127,6 +127,47 @@
                 class="btn-card">Попробовать</a>
         </div>
     </section>
+    <section class="calc" id="calc">
+        <h2>Калькулятор цены</h2>
+        <p>Расчитайте стоимость запроса к нейросети*</p>
+        <form class="calc-form"><label for="model">Модель</label>
+            <select id="model">
+                <optgroup label="Текст">
+                    <option value="ChatGPT 5.4 Pro">ChatGPT 5.4 Pro</option>
+                    <option value="ChatGPT 5.4">ChatGPT 5.4</option>
+                    <option value="ChatGPT 5.2 Pro">ChatGPT 5.2 Pro</option>
+                    <option value="ChatGPT 5.3 Chat">ChatGPT 5.3 Chat</option>
+                    <option value="Gemini 3.1 Pro">Gemini 3.1 Pro</option>
+                    <option value="Gemini 3 Flash">Gemini 3 Flash</option>
+                </optgroup>
+                <optgroup label="Фото">
+                    <option value="Nano Banana Pro" disabled>Nano Banana Pro</option>
+                    <option value="Nano Banana 2" disabled>Nano Banana 2</option>
+                </optgroup>
+                <optgroup label="Видео">
+                    <option value="Kling 2.6 Pro" disabled>Kling 2.6 Pro</option>
+                    <option value="Sora 2" disabled>Sora 2</option>
+                    <option value="Veo 3.1 Fast" disabled>Veo 3.1 Fast</option>
+                    <option value="LTXV 2 Fast" disabled>LTXV 2 Fast</option>
+                </optgroup>
+                <optgroup label="Фото в видео">
+                    <option value="Kling 2.6 Pro I2V" disabled>Kling 2.6 Pro I2V</option>
+                    <option value="Veo 3.1 Fast I2V" disabled>Veo 3.1 Fast I2V</option>
+                    <option value="Sora 2 I2V" disabled>Sora 2 I2V</option>
+                </optgroup>
+            </select>
+            <label for="input-text">Запрос</label>
+            <input type="text" id="input-text" placeholder="Введите тестовый запрос к ИИ...">
+            <label for="web-search">Включить поиск в интернете</label>
+            <input type="checkbox" id="web-search">
+            <button type="button">Рассчитать цену</button>
+            <p>Итоговая цена
+                <output id="result" class="neuron">0</output> нейронов
+                ~<span id="rubles" class="rub">0</span>₽
+            </p>
+            <p class="disclaimer">*Средняя стоимость запроса без учёта токенов на рассуждение и медиа</p>
+        </form>
+    </section>
     <footer id="contacts">
         <div class="footer-info">
             <ul>
@@ -143,6 +184,7 @@
             <p><i>Информация на сайте не является публичной офертой</i></p>
         </div>
     </footer>
+    <script src="script.js"></script>
 </body>
 
 </html>
