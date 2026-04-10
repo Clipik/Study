@@ -1,14 +1,13 @@
 const modelSelect = document.querySelector('#model');
 const inputText = document.querySelector('#input-text');
 const webSearch = document.querySelector('#web-search');
-const btn = document.querySelector('button');
+const btn = document.querySelector('#calc-btn');
 const resultOutput = document.querySelector('#result');
 const neuronPrice = 0.004;
 const markup = 1.15;
 const mTokens = 1000000;
 
 btn.addEventListener('click', () => {
-    let total = 0;
     let in_price = 0;
     let out_price = 0;
     let web_price = 0;
@@ -94,7 +93,7 @@ btn.addEventListener('click', () => {
         let costOutUsd = (tokensOut * out_price) / mTokens;
         let currentWebPrice = webSearch.checked ? web_price : 0; // нейронка открыла мне простой способ записи if else
 
-        neuron = Math.ceil((costInUsd +costOutUsd + currentWebPrice) / neuronPrice);
+        neuron = Math.ceil((costInUsd + costOutUsd + currentWebPrice) / neuronPrice);
     }
 
     else if (fixed_price > 0) {
@@ -111,4 +110,27 @@ btn.addEventListener('click', () => {
     const rubResult = (neuron * rubRate).toFixed(2);
 
     document.querySelector('#rubles').textContent = rubResult;
+});
+
+
+
+const themeBtn = document.querySelector('#theme');
+const themeIco = document.querySelector('#theme-ico');
+
+themeBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+    if (document.body.classList.contains('dark')) {
+        themeIco.src = 'images/light.svg';
+    }
+    else {
+        themeIco.src = 'images/dark.svg';
+    }
+});
+
+
+const textarea = document.querySelector('#input-text');
+
+textarea.addEventListener('input', function () {
+    this.style.height = 'auto';
+    this.style.height = this.scrollHeight + 'px';
 });
