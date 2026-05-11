@@ -1,199 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ainoVPN — флагманские нейросети без впн и подписок</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Главная @ainovpn</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+            }
+        }
+    </script>
 </head>
 
 <body>
     <header class="header">
-        <div class="logo"><a href="https://t.me/gopiton_bot"><img src="images/logo.svg" alt="ainoVPN logo"></a></div>
-        <nav>
+        <div class="logo"><a href="index.html"><img src="images/logo.svg" alt="ainoVPN"></a></div>
+        <button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
+        <nav class="main-nav" id="main-nav">
             <ul class="nav-links">
-                <li><a href="#catalog">Модели</a></li>
-                <li><a href="#how">Как пользоваться</a></li>
-                <li><a href="#contacts">Контакты</a></li>
-                <li><a href="#calc">Калькулятор</a></li>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="services.html">Модели и цены</a></li>
+                <li><a href="contact.html">Контакты</a></li>
+                <li class="nav-theme-li">
+                    <button class="theme-toggle-btn nav-theme-btn">
+                        <img src="images/dark.svg" class="theme-ico" alt="Сменить тему">
+                        <span>Сменить тему</span>
+                    </button>
+                </li>
             </ul>
         </nav>
         <div class="left-nav">
-            <a href="https://t.me/gopiton_bot" target="_blank" rel="noopener noreferrer"
-                class="btn-cta-small">Начать</a>
-            <button id="theme"><img src="images/dark.svg" id="theme-ico" alt="Сменить тему"></button>
+            <a href="https://t.me/gopiton_bot" target="_blank" class="btn-cta-small">Начать</a>
+            <button class="theme-toggle-btn" id="theme"><img src="images/dark.svg" class="theme-ico" id="theme-ico" alt="Сменить тему"></button>
         </div>
     </header>
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Нейросети в России без ВПН и подписок</h1>
-            <!-- <p>ChatGPT 5.4 Pro<br>Gemini 3.1 Pro<br>Nano Banana 2 / Pro<br>Kling 2.6 Pro<br>Sora 2<br>Анимация фото в видео
-        </p> -->
-            <!-- Пришлось поменять тип написания, чтобы в один ряд их поставить по аналогии с хедером -->
-            <ul class="models-list">
-                <li>ChatGPT 5.4 Pro</li>
-                <li>Gemini 3.1 Pro</li>
-                <li>Nano Banana 2 / Pro</li>
-                <li>Kling 2.6 Pro</li>
-                <li>Sora 2</li>
-                <li>Анимация фото в видео</li>
-            </ul>
-            <div class="hero-btns">
-                <a href="https://t.me/gopiton_bot" target="_blank" rel="noopener noreferrer" class="btn-cta">Начать</a>
-                <a href="#how" class="btn-how">Как пользоваться</a>
+
+    <main class="fade-in">
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Нейросети в России без ВПН</h1>
+                <p>Мы даем доступ к флагманам. Без подписок. Платишь только за то, что используешь.</p>
+                <div class="hero-btns">
+                    <a href="https://t.me/gopiton_bot" class="btn-cta">Начать</a>
+                </div>
             </div>
-        </div>
-        <div class="hero-img"><img src="images/gpuhero.webp" alt="Видеокарта A2000"></div>
-    </section>
-    <section class="catalog" id="catalog">
-        <h2>Доступные модели</h2>
-        <div class="product-grid">
-            <article class="product-card">
-                <div class="product-image"><img src="images/chatgpt54pro.webp" alt="ChatGPT 5.4 Pro"></div>
-                <div class="product-info">
-                    <div class="product-header">
-                        <h3>ChatGPT 5.4 Pro</h3>
-                        <p>Новейшая модель от OpenAI</p>
+            <div class="hero-3d" id="canvas-container"></div>
+        </section>
+
+        <section class="slider-section">
+            <h2>Преимущества</h2>
+            <div class="slider-container">
+                <div class="slider-track" id="slider-track">
+                    <div class="slide">
+                        <h3>Анонимность</h3>
+                        <p>Никаких логов, никто тебя найдет</p>
                     </div>
-                    <dl>
-                        <div class="params-row">
-                            <dt>Контекст:</dt>
-                            <dd>1 000 000 токенов</dd>
-                        </div>
-                        <div class="params-row">
-                            <dt>Цена:</dt>
-                            <dd>от 11₽</dd>
-                        </div>
-                    </dl>
-                    <a href="https://t.me/gopiton_bot" target="_blank" rel="noopener noreferrer"
-                        class="btn-card">Попробовать</a>
-                </div>
-            </article>
-            <article class="product-card">
-                <div class="product-image"><img src="images/nanobananapro.webp" alt="Nano Banana Pro"></div>
-                <div class="product-info">
-                    <div class="product-header">
-                        <h3>Nano Banana Pro</h3>
-                        <p>Лучшая модель для генерации изображений от Google Gemini. Профессиональный рендер с чётким
-                            текстом</p>
+                    <div class="slide">
+                        <h3>Скорость</h3>
+                        <p>Оптоволокно прямо до серверов OpenAI</p>
                     </div>
-                    <dl>
-                        <div class="params-row">
-                            <dt>Контекст:</dt>
-                            <dd>65 536 токенов</dd>
-                        </div>
-                        <div class="params-row">
-                            <dt>Цена:</dt>
-                            <dd>от 35₽</dd>
-                        </div>
-                    </dl>
-                    <a href="https://t.me/gopiton_bot" target="_blank" rel="noopener noreferrer"
-                        class="btn-card">Попробовать</a>
-                </div>
-            </article>
-            <article class="product-card">
-                <div class="product-image"><img src="images/kling.webp" alt="Kling 2.6 Pro"></div>
-                <div class="product-info">
-                    <div class="product-header">
-                        <h3>Kling 2.6 Pro</h3>
-                        <p>Кинематографичная генерация, лучший результат</p>
+                    <div class="slide">
+                        <h3>Дешевизна</h3>
+                        <p>Дешевле только с&pi;здить</p>
                     </div>
-                    <dl>
-                        <div class="params-row">
-                            <dt>Длина:</dt>
-                            <dd>5-10 сек</dd>
-                        </div>
-                        <div class="params-row">
-                            <dt>Цена:</dt>
-                            <dd>от 66₽</dd>
-                        </div>
-                    </dl>
-                    <a href="https://t.me/gopiton_bot" target="_blank" rel="noopener noreferrer"
-                        class="btn-card">Попробовать</a>
                 </div>
-            </article>
-        </div>
-    </section>
-    <div class="sections-how-calc">
-        <section class="info" id="how">
-            <h2>Как пользоваться</h2>
-            <div class="how-card">
-                <h3>Лучшие нейросети <b>бесплатно</b></h3>
-                <ol>
-                    <li>Перейдите в телеграм бота <a href="https://t.me/gopiton_bot" class="link-bot">@gopiton_bot</a>
-                    </li>
-                    <li>Подпишитесь на наш канал и получите 25 нейронов (~3 запроса к ИИ)</li>
-                    <li>Приглашайте друзей и получайте по&nbsp;50&nbsp;нейронов за&nbsp;каждого и 10% от их пополнений
-                        <b>рублями
-                            пожизненно</b>
-                    </li>
-                </ol>
-                <a href="https://t.me/gopiton_bot" target="_blank" rel="noopener noreferrer"
-                    class="btn-card">Попробовать</a>
+                <button class="slider-btn prev" id="slider-prev">❮</button>
+                <button class="slider-btn next" id="slider-next">❯</button>
             </div>
         </section>
-        <section class="calc" id="calc">
-            <h2>Калькулятор цены*</h2>
-            <form class="calc-form"><label for="model">Модель</label>
-                <select id="model">
-                    <optgroup label="Текст">
-                        <option value="ChatGPT 5.4 Pro">ChatGPT 5.4 Pro</option>
-                        <option value="ChatGPT 5.4">ChatGPT 5.4</option>
-                        <option value="ChatGPT 5.2 Pro">ChatGPT 5.2 Pro</option>
-                        <option value="ChatGPT 5.3 Chat">ChatGPT 5.3 Chat</option>
-                        <option value="Gemini 3.1 Pro">Gemini 3.1 Pro</option>
-                        <option value="Gemini 3 Flash">Gemini 3 Flash</option>
-                    </optgroup>
-                    <optgroup label="Фото" disabled>
-                        <option value="Nano Banana Pro" disabled>Nano Banana Pro</option>
-                        <option value="Nano Banana 2" disabled>Nano Banana 2</option>
-                    </optgroup>
-                    <optgroup label="Видео" disabled>
-                        <option value="Kling 2.6 Pro" disabled>Kling 2.6 Pro</option>
-                        <option value="Sora 2" disabled>Sora 2</option>
-                        <option value="Veo 3.1 Fast" disabled>Veo 3.1 Fast</option>
-                        <option value="LTXV 2 Fast" disabled>LTXV 2 Fast</option>
-                    </optgroup>
-                    <optgroup label="Фото в видео" disabled>
-                        <option value="Kling 2.6 Pro I2V" disabled>Kling 2.6 Pro I2V</option>
-                        <option value="Veo 3.1 Fast I2V" disabled>Veo 3.1 Fast I2V</option>
-                        <option value="Sora 2 I2V" disabled>Sora 2 I2V</option>
-                    </optgroup>
-                </select>
-                <label for="input-text">Запрос</label>
-                <textarea type="text" id="input-text" placeholder="Введите тестовый запрос к ИИ..."></textarea>
-                <div class="checkbox-form"><label for="web-search">Включить поиск в интернете</label>
-                    <input type="checkbox" id="web-search">
-                </div>
-                <p class="disclaimer">*Средняя стоимость запроса без учёта токенов на рассуждение и медиа</p>
-                <div class="calc-btn-calc-result"><button type="button" id="calc-btn">Рассчитать цену</button>
-                    <!-- пытался понять че шайтан калькулятор не работал, оказалось, он ловил кнопку темы, добавляем айди-->
-                    <div class="calc-result">
-                        <p class="neuron-res"><output id="result" class="neuron">0</output> нейронов</p>
-                        <p class="rub-res">~<span id="rubles" class="rub">0</span>₽</p>
-                    </div>
-                </div>
-            </form>
-        </section>
-    </div>
-    <footer id="contacts">
-        <div class="footer-info">
-            <ul>
-                <li><a href="#">Политика конфиденциальности</a></li>
-                <li><a href="#">Контакты</a></li>
-                <li><a href="https://gopiton.com/">Другие проекты</a></li>
-            </ul>
-            <div class="who">
-                <p>&copy; GoPiton Projects, 2026</p>
-                <p>ИП Мищенко Никита Дмитриевич</p>
-            </div>
-        </div>
-        <div class="public">
-            <p><i>Информация на сайте не является публичной офертой</i></p>
-        </div>
+    </main>
+
+    <footer>
+        <p>&copy; GoPiton Projects, 2026. ИП Мищенко Н.Д.</p>
     </footer>
-    <script src="script.js"></script>
+
+    <script type="module" src="script.js"></script>
 </body>
 
 </html>

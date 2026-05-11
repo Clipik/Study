@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты — @ainoVPN</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo"><a href="index.html"><img src="images/logo.svg" alt="ainoVPN"></a></div>
+        <button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
+        <nav class="main-nav" id="main-nav">
+            <ul class="nav-links">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="services.html">Модели и Цены</a></li>
+                <li><a href="contact.html" class="active">Контакты</a></li>
+                <li class="nav-theme-li">
+                    <button class="theme-toggle-btn nav-theme-btn">
+                        <img src="images/dark.svg" class="theme-ico" alt="Сменить тему">
+                        <span>Сменить тему</span>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+        <div class="left-nav">
+            <button class="theme-toggle-btn" id="theme"><img src="images/dark.svg" class="theme-ico" id="theme-ico" alt="Сменить тему"></button>
+        </div>
+    </header>
+
+    <main class="fade-in">
+        <section class="contact-section">
+            <h2>Связь с нами</h2>
+            <p style="margin-bottom: 2rem;">Если у тебя что-то сломалось, скорее всего, проблема в твоих кривых руках. Но можешь написать.</p>
+
+            <form id="contact-form" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Имя</label>
+                    <input type="text" id="name" name="name" placeholder="Твоё имя">
+                    <span class="error-msg" id="name-error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Твой email">
+                    <span class="error-msg" id="email-error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="message">Сообщение</label>
+                    <textarea id="message" name="message" placeholder="Суть проблемы..."></textarea>
+                    <span class="error-msg" id="message-error"></span>
+                </div>
+                <button type="submit" class="btn-cta" style="width: fit-content;">Отправить в /dev/null</button>
+                <div id="form-success" class="success-msg" style="display:none; color: #00cc66; font-weight: 600;">Ушло. Жди ответа (нет)</div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; GoPiton Projects, 2026. ИП Мищенко Н.Д.</p>
+    </footer>
+
+    <script type="module" src="script.js"></script>
+</body>
+
+</html>

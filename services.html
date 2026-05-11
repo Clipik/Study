@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ainoVPN модели и цены</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo"><a href="index.html"><img src="images/logo.svg" alt="ainoVPN"></a></div>
+        <button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
+        <nav class="main-nav" id="main-nav">
+            <ul class="nav-links">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="services.html" class="active">Модели и цены</a></li>
+                <li><a href="contact.html">Контакты</a></li>
+                <li class="nav-theme-li">
+                    <button class="theme-toggle-btn nav-theme-btn">
+                        <img src="images/dark.svg" class="theme-ico" alt="Сменить тему">
+                        <span>Сменить тему</span>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+        <div class="left-nav">
+            <a href="https://t.me/gopiton_bot" target="_blank" class="btn-cta-small">Начать</a>
+            <button class="theme-toggle-btn" id="theme"><img src="images/dark.svg" class="theme-ico" id="theme-ico" alt="Сменить тему"></button>
+        </div>
+    </header>
+
+    <main class="fade-in">
+        <section class="catalog">
+            <h2>Доступные модели</h2>
+            <div class="product-grid">
+                <article class="product-card">
+                    <div class="product-image"><img src="images/chatgpt54pro.webp" alt="ChatGPT 5.4 Pro"></div>
+                    <div class="product-info">
+                        <div>
+                            <h3>ChatGPT 5.4 Pro</h3>
+                            <p>Контекст: 1 000 000 токенов</p>
+                            <p>Цена: от 11₽</p>
+                        </div>
+                        <a href="https://t.me/gopiton_bot" target="_blank" class="btn-card">Попробовать</a>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <div class="product-image"><img src="images/nanobananapro.webp" alt="Nano Banana Pro"></div>
+                    <div class="product-info">
+                        <div>
+                            <h3>Nano Banana Pro</h3>
+                            <p>Контекст: 65 536 токенов</p>
+                            <p>Цена: от 35₽</p>
+                        </div>
+                        <a href="https://t.me/gopiton_bot" target="_blank" class="btn-card">Попробовать</a>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <div class="product-image"><img src="images/kling.webp" alt="Kling 2.6 Pro"></div>
+                    <div class="product-info">
+                        <div>
+                            <h3>Kling 2.6 Pro</h3>
+                            <p>Длина: 5-10 сек</p>
+                            <p>Цена: от 66₽</p>
+                        </div>
+                        <a href="https://t.me/gopiton_bot" target="_blank" class="btn-card">Попробовать</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="calc">
+            <h2>Калькулятор цены*</h2>
+            <form class="calc-form">
+                <label for="model">Модель</label>
+                <select id="model">
+                    <optgroup label="Текст">
+                        <option value="ChatGPT 5.4 Pro">ChatGPT 5.4 Pro</option>
+                        <option value="ChatGPT 5.4">ChatGPT 5.4</option>
+                        <option value="ChatGPT 5.2 Pro">ChatGPT 5.2 Pro</option>
+                        <option value="ChatGPT 5.3 Chat">ChatGPT 5.3 Chat</option>
+                        <option value="Gemini 3.1 Pro">Gemini 3.1 Pro</option>
+                        <option value="Gemini 3 Flash">Gemini 3 Flash</option>
+                    </optgroup>
+                    <optgroup label="Фото" disabled>
+                        <option value="Nano Banana Pro" disabled>Nano Banana Pro</option>
+                        <option value="Nano Banana 2" disabled>Nano Banana 2</option>
+                    </optgroup>
+                    <optgroup label="Видео" disabled>
+                        <option value="Kling 2.6 Pro" disabled>Kling 2.6 Pro</option>
+                        <option value="Sora 2" disabled>Sora 2</option>
+                        <option value="Veo 3.1 Fast" disabled>Veo 3.1 Fast</option>
+                        <option value="LTXV 2 Fast" disabled>LTXV 2 Fast</option>
+                    </optgroup>
+                    <optgroup label="Фото в видео" disabled>
+                        <option value="Kling 2.6 Pro I2V" disabled>Kling 2.6 Pro I2V</option>
+                        <option value="Veo 3.1 Fast I2V" disabled>Veo 3.1 Fast I2V</option>
+                        <option value="Sora 2 I2V" disabled>Sora 2 I2V</option>
+                    </optgroup>
+                </select>
+
+                <label for="input-text">Запрос</label>
+                <textarea id="input-text" placeholder="Введите тестовый запрос к ИИ..."></textarea>
+
+                <div class="checkbox-form">
+                    <label for="web-search">Включить поиск в интернете</label>
+                    <input type="checkbox" id="web-search">
+                </div>
+
+                <p class="disclaimer" style="font-size: 0.8rem; color: var(--text-color-minor);">*Средняя стоимость запроса без учёта токенов на рассуждение и медиа</p>
+
+                <div class="calc-btn-calc-result" style="display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap;">
+                    <button type="button" id="calc-btn" class="btn-how" style="margin: 0; border: 2px solid var(--accent);">Рассчитать цену</button>
+                    <p class="neuron-res">
+                        <output id="result" class="neuron">0</output> нейронов<span class="rub-sup">&thinsp;~<span id="rubles">0</span>₽</span>
+                    </p>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; GoPiton Projects, 2026. ИП Мищенко Н.Д.</p>
+    </footer>
+
+    <script type="module" src="script.js"></script>
+</body>
+
+</html>

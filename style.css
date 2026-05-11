@@ -1,0 +1,570 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url('fonts/Montserrat-Regular.woff') format('woff');
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('fonts/Montserrat-Medium.woff') format('woff');
+    font-style: normal;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('fonts/Montserrat-Bold.woff') format('woff');
+    font-style: normal;
+    font-weight: 600;
+}
+
+:root {
+    --bg-color: #fff;
+    --text-color: #222;
+    --product-card-bg: #fff;
+    --text-color-minor: #5a5a5a;
+    --bg-color-minor: #eeeeee;
+    --text-color-disabled: #7a7a7a;
+    --accent: #FF0033;
+}
+
+body.dark {
+    --bg-color: #1a1a1a;
+    --text-color: #fff;
+    --product-card-bg: #2a2a2a;
+    --text-color-minor: #949494;
+    --bg-color-minor: #333;
+    --text-color-disabled: #6d6d6d;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+    padding: 16px 8%;
+    text-wrap: balance;
+    margin: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.4s ease both;
+}
+
+header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 32px;
+    align-items: center;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    border-radius: 10rem;
+    background-color: var(--bg-color);
+    margin-bottom: 2rem;
+}
+
+.logo img {
+    height: 48px;
+    width: auto;
+    display: block;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-weight: 500;
+    gap: 2rem;
+}
+
+.left-nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s;
+}
+
+a:hover,
+a.active {
+    color: var(--accent);
+}
+
+.btn-cta,
+.btn-cta-small,
+.btn-card {
+    text-decoration: none;
+    font-family: 'Montserrat';
+    text-align: center;
+    font-weight: 500;
+    padding: 16px 24px;
+    border-radius: 10rem;
+    border: 0;
+    color: #fff !important;
+    background-color: var(--accent);
+    cursor: pointer;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+
+.btn-cta:hover,
+.btn-cta-small:hover,
+.btn-card:hover {
+    background-color: #e4002e;
+}
+
+.btn-how {
+    text-decoration: none;
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 16px 24px;
+    border-radius: 10rem;
+    background-color: transparent;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-how:hover {
+    background-color: var(--bg-color-minor);
+}
+
+.theme-toggle-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+}
+
+h1 {
+    font-size: 5rem;
+    line-height: 1.05;
+    margin: 0;
+}
+
+h2 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--text-color-minor);
+}
+
+.hero {
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    flex: 1.2;
+}
+
+.hero-3d {
+    flex: 1;
+    height: 100%;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#canvas-container canvas {
+    display: block;
+    max-width: 100%;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem 0;
+}
+
+.product-card {
+    display: flex;
+    padding: 24px;
+    border-radius: 1.5rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    background-color: var(--product-card-bg);
+    gap: 1rem;
+}
+
+.product-image {
+    width: 120px;
+    height: 120px;
+    flex-shrink: 0;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.calc-form,
+.contact-form {
+    background-color: var(--product-card-bg);
+    padding: 32px;
+    border-radius: 1.5rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+label {
+    font-weight: 500;
+    font-size: 1.25rem;
+}
+
+input,
+select,
+textarea {
+    font-family: 'Montserrat';
+    font-size: 1rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    border: none;
+    background-color: var(--bg-color-minor);
+    color: var(--text-color);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: none;
+    overflow-y: hidden;
+    min-height: 56px;
+}
+
+select {
+    appearance: none;
+    background-image: url('images/down.svg');
+    background-repeat: no-repeat;
+    background-position: right 20px center;
+    background-size: 1rem;
+    padding-right: 45px;
+    cursor: pointer;
+}
+
+optgroup {
+    font-family: 'Montserrat';
+    font-weight: 600;
+}
+
+:disabled {
+    color: var(--text-color-disabled);
+}
+
+.checkbox-form {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+input[type="checkbox"] {
+    width: 1.25rem;
+    height: 1.25rem;
+    cursor: pointer;
+    accent-color: var(--accent);
+}
+
+.neuron-res {
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin: 0;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+.neuron {
+    color: var(--accent);
+}
+
+.rub-sup {
+    font-size: 0.5em;
+    vertical-align: super;
+    color: var(--text-color-minor);
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.error-msg {
+    color: var(--accent);
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.slider-section {
+    margin: 4rem 0;
+}
+
+.slider-container {
+    position: relative;
+    overflow: hidden;
+    background: var(--bg-color-minor);
+    border-radius: 2rem;
+    padding: 3rem;
+}
+
+.slider-track {
+    display: flex;
+    transition: 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    text-align: center;
+    padding: 0 56px;
+    box-sizing: border-box;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    z-index: 10;
+    flex-shrink: 0;
+}
+
+.slider-btn.prev {
+    left: 10px;
+}
+
+.slider-btn.next {
+    right: 10px;
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.nav-theme-li {
+    display: none;
+}
+
+.nav-theme-btn {
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--text-color);
+    gap: 0.75rem;
+    padding: 0;
+    transition: color 0.3s;
+}
+
+.nav-theme-btn:hover {
+    color: var(--accent);
+}
+
+.contact-section {
+    max-width: 700px;
+}
+
+footer {
+    margin-top: 4rem;
+    padding: 4rem 0 2rem;
+    border-top: 1px solid var(--bg-color-minor);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media (max-width: 1024px) {
+    body {
+        padding: 12px 4%;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+        z-index: 101;
+    }
+
+    .left-nav {
+        display: none;
+    }
+
+    .nav-theme-li {
+        display: block;
+        border-top: 1px solid var(--bg-color-minor);
+        padding-top: 1.25rem;
+        margin-top: 0.25rem;
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .main-nav {
+        display: none;
+        position: absolute;
+        top: calc(100% + 8px);
+        left: 0;
+        right: 0;
+        background: var(--product-card-bg);
+        padding: 1.5rem 2rem;
+        border-radius: 1.5rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        z-index: 100;
+    }
+
+    .main-nav.active {
+        display: block;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.25rem;
+    }
+
+    .hero {
+        flex-direction: column;
+        height: auto;
+        text-align: center;
+        padding-top: 2rem;
+    }
+
+    .hero-3d {
+        min-height: 280px;
+        width: 100%;
+    }
+
+    .hero-btns {
+        display: flex;
+        justify-content: center;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .calc-form,
+    .contact-form {
+        padding: 20px;
+        max-width: 100%;
+    }
+
+    .calc-btn-calc-result {
+        flex-direction: column;
+        align-items: flex-start !important;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    header {
+        padding: 12px 20px;
+        border-radius: 2rem;
+    }
+
+    .btn-cta,
+    .btn-cta-small,
+    .btn-card {
+        padding: 16px 24px;
+        font-size: 1rem;
+    }
+
+    .slider-container {
+        padding: 2rem 1.5rem;
+    }
+
+    .slider-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 1rem;
+    }
+
+    .slide {
+        padding: 0 44px;
+    }
+}
